@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Environment, can be Production, Staging, Development, Testing
+export FLASK_ENV=Development
+export PYTHONPATH=`pwd`
+
+# DB Configuration
+# Use MySQL
+export DB=MySQL
+export HOST=127.0.0.1
+export PORT=3306
+export USERNAME=mysql
+export PASSWORD=
+
+# Use SqliteDB
+# DB=SqliteDB
+
+# Start project
+python manage.py runserver -h 0.0.0.0 -p 8080
