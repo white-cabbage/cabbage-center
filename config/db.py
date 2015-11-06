@@ -1,12 +1,7 @@
 # coding: utf8
 
-from peewee import MySQLDatabase
-from peewee import SqliteDatabase
+from pymongo import MongoClient
 
 
-class MySQLDB(MySQLDatabase):
-    pass
-
-
-class SqliteDB(SqliteDatabase):
+class MongoDB(MongoClient):
     pass

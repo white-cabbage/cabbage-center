@@ -3,6 +3,8 @@
 import os
 # import argparse
 from config import Production, Staging, Development, Testing
+from db import MongoDB
+
 
 try:
     env = os.environ['FLASK_ENV']
@@ -28,5 +30,7 @@ class Environment(object):
             self.config = Testing()
         else:
             self.config = Development()
+
+        self.mongo_client = MongoClient(self.config.MONGO_DB)
 
 environment = Environment()

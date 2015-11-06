@@ -5,15 +5,8 @@ export FLASK_ENV=Development
 export PYTHONPATH=`pwd`
 
 # DB Configuration
-# Use MySQL
-export DB=MySQL
-export HOST=127.0.0.1
-export PORT=3306
-export USERNAME=mysql
-export PASSWORD=
-
-# Use SqliteDB
-# DB=SqliteDB
+# Use MongoDB
+export MONGO_DB='mongodb://localhost:27017/'
 
 # Start project
 python manage.py runserver -h 0.0.0.0 -p 8080
