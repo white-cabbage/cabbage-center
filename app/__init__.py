@@ -20,12 +20,11 @@ def create_app():
 
     @app.before_request
     def _db_connect():
-        environment.config.DB.connect()
+        pass
 
     @app.teardown_request
     def _db_close(exc):
-        if not environment.config.DB.is_closed():
-            environment.config.DB.close()
+        pass
 
     return app
 

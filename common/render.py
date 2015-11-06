@@ -3,8 +3,8 @@
 import datetime
 import copy
 
+from bson.objectid import ObjectId
 from flask import json, Response
-# from playhouse.shortcuts import model_to_dict
 
 default_headers = {
     'Access-Control-Allow-Origin': '*',
@@ -63,14 +63,11 @@ def redirect(location):
 
 
 def default_json_format(obj):
-    # NOT AVALIABLE
     """Default JSON serializer."""
     if isinstance(obj, datetime.datetime):
         obj = str(obj)
     if isinstance(obj, int):
         obj = str(obj)
-    # if isinstance(obj, Order):
-    # if obj.__class__.__name__ == "Order":
-    #     return model_to_dict(obj, recurse=False)
-
+    if isinstance(obj, ObjectId):
+        obj = str(obj)
     return obj

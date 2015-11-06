@@ -15,7 +15,7 @@ class BaseConfig(object):
 class Production(BaseConfig):
     DEBUG = False
 
-    SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     MONGO_DB = os.environ['MONGO_DB']
     DB_ERASABLE = False
 
@@ -26,8 +26,10 @@ class Staging(BaseConfig):
 
 
 class Development(BaseConfig):
+
     pass
 
 
 class Testing(BaseConfig):
+
     pass
