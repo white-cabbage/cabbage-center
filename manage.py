@@ -16,9 +16,6 @@ manager = Manager(application)
 
 @manager.command
 def test():
-    if not environment.config.ALLOW_TEST:
-        raise Exception("This environment is not allow to run tests.")
-
     import unittest
     tests = unittest.TestLoader().discover('tests', pattern="*_test.py")
     unittest.TextTestRunner(verbosity=2).run(tests)
