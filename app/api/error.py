@@ -13,6 +13,4 @@ from app.models.log.error import Error
 @api.route('/error/create', methods=['GET'])
 def servers_index():
 
-    print request.data
-
     return render.ok()
