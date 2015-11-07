@@ -18,6 +18,9 @@ def create_app():
     app.config.from_object(environment.config)
     app.register_blueprint(api, url_prefix='/api')
 
+    # init db with MongoEngine
+    environment.db.init_app(app)
+
     @app.before_request
     def _db_connect():
         pass

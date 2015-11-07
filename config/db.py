@@ -1,7 +1,7 @@
 # coding: utf8
 
-from pymongo import MongoClient
+from flask.ext.mongoengine import MongoEngine
 
 
-class MongoDB(MongoClient):
+class MongoDB(MongoEngine):
     pass

@@ -7,4 +7,4 @@ from flask.ext.cors import CORS
 api = Blueprint('api', __name__)
 CORS(api)
 
-from app.api import server
+from app.api import error

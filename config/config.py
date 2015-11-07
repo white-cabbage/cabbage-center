@@ -9,14 +9,20 @@ class BaseConfig(object):
     # DB can be erased physically
     DB_ERASABLE = True
     SECRET_KEY = os.environ.get('SECRET_KEY', 'development-secret-key')
-    MONGO_DB = os.environ['MONGO_DB']
+    MONGODB_SETTINGS = {
+        'db': 'cabbage-center-development',
+        'host': os.environ['MONGO_DB']
+    }
 
 
 class Production(BaseConfig):
     DEBUG = False
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    MONGO_DB = os.environ['MONGO_DB']
+    MONGODB_SETTINGS = {
+        'db': 'cabbage-center-production',
+        'host': os.environ['MONGO_DB']
+    }
     DB_ERASABLE = False
 
 

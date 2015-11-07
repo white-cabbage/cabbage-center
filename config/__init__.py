@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-# import argparse
 from config import Production, Staging, Development, Testing
 from db import MongoDB
 
@@ -16,6 +15,7 @@ class Environment(object):
 
     def __init__(self):
 
+        self.db = MongoDB()
         global env
         if env not in ('Production', 'Staging', 'Development', 'Testing'):
             print 'Invalid environment key, defaulting to Development'
@@ -30,6 +30,5 @@ class Environment(object):
         else:
             self.config = Development()
 
-        self.mongo_client = MongoDB(self.config.MONGO_DB)
 
 environment = Environment()
