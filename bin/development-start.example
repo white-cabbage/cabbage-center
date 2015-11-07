@@ -6,7 +6,7 @@ export PYTHONPATH=`pwd`
 
 # DB Configuration
 # Use MongoDB
-export MONGO_DB='mongodb://localhost:27017/'
+export MONGO_DB='mongodb://localhost:27017/cabbage-center-production'
 
 # Start project
 python manage.py runserver -h 0.0.0.0 -p 8080

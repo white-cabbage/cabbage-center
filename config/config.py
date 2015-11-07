@@ -4,6 +4,7 @@ import os
 
 
 class BaseConfig(object):
+
     DEBUG = True
 
     # DB can be erased physically
@@ -11,11 +12,14 @@ class BaseConfig(object):
     SECRET_KEY = os.environ.get('SECRET_KEY', 'development-secret-key')
     MONGODB_SETTINGS = {
         'db': 'cabbage-center-development',
-        'host': os.environ['MONGO_DB']
+        # 'host': os.environ['MONGO_DB']
+        'host': 'localhost',
+        'port': 27017
     }
 
 
 class Production(BaseConfig):
+
     DEBUG = False
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -38,4 +42,4 @@ class Development(BaseConfig):
 
 class Testing(BaseConfig):
 
-    pass
+    TESTING = True

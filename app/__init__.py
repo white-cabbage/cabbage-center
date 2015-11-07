@@ -36,6 +36,7 @@ def init_db(app):
 
     pass
 
+
 def erase_db(app):
 
     pass
