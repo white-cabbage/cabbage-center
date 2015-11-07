@@ -18,7 +18,7 @@ def create_app():
     app.config.from_object(environment.config)
     app.register_blueprint(api, url_prefix='/api')
 
-    # init db with MongoEngine
+    # Init db with MongoEngine
     environment.db.init_app(app)
 
     @app.before_request
@@ -33,21 +33,12 @@ def create_app():
 
 
 def init_db(app):
-    db = app.config['DB']
-    db.connect()
 
-    db.create_tables([], safe=True)
-
-    db.close()
-
+    pass
 
 def erase_db(app):
 
-    db = app.config['DB']
-
-    db.drop_tables([], safe=True)
-
-    db.close()
+    pass
 
 
 def add_seed():
