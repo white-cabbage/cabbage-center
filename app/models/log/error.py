@@ -12,7 +12,7 @@ class Error(db.Document):
     ERROR = 0
     EXCEPTION = 1
 
-    source = db.StringField(required=True, max_length=200)
+    aid = db.StringField(required=True, max_length=200)  # agent id
     type = db.IntField(required=True)
     content = db.StringField(required=True, max_length=200)
 
