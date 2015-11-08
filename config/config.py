@@ -43,3 +43,4 @@ class Development(BaseConfig):
 class Testing(BaseConfig):
 
     TESTING = True
+    DEBUG = True

@@ -2,10 +2,11 @@
 
 import datetime
 
-from flask import json, request
+from flask import request
 
 from app.api import api
 from common import render
+from common.utils import json_loads
 from config import environment
 from app.models.log.error import Error
 
@@ -20,9 +21,9 @@ def error_get():
 
 @api.route('/error/create', methods=['POST'])
 def error_create():
-    # data = json.loads(request.data)
-    print '\n', 'request.data: ', request.data
-    return render.ok()
+    data = json_loads(request.data)
+    if data is None:
+        return render.error('post data error')
 
     aid = data.get('aid')
     type = data.get('type')
